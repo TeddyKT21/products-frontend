@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" defer src="./scripts/fetch.js"></script>
+    <script type="module" defer src="./scripts/data.js"></script>
+    <script type="module" defer src="./scripts/elementCreation.js"></script>
+    <script type="module" defer src="./scripts/history.js"></script>
+    <script type="module" defer src="./scripts/auth.js"></script>
+    <script type="module" defer src="index.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/productsPage.css" />
+    <link rel="stylesheet" href="./styles/productDetails.css" />
+    <link rel="stylesheet" href="./styles/editProduct.css" />
+    <link rel="stylesheet" href="./styles/auth.css" />
+    <title>Inventory Managment</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="header">
+        <div style="font-size: large; font-style: italic;">
+          Inventory Managment
+          <div class="userAction" id="login">
+            Login
+          </div>
+          <div class="userAction" id="signup">
+            Sign up
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 80px; position: relative;">
+          <div class="goHome">
+            <i class="material-symbols-outlined">home</i>
+          </div>
+          <div class="addProduct">
+            <i class="material-symbols-outlined hollow addIcon">add_circle</i>
+          </div>
+        </div>
+      </div>
+      <div id="main"></div>
+      <div id="footer">
+        <div style="font-size: large">Technical Support</div>
+        <div
+          style="
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            border: 1px solid #ffdecb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <i class="material-symbols-outlined noHover noPointer">call</i>
+        </div>
+        <div  style="font-size: large">+1.555.555.5555</div>
+      </div>
+    </div>
+  </body>
+</html>
