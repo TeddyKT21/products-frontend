@@ -1,5 +1,5 @@
 
-const SERVER_URL = 'http://localhost:8070';
+const SERVER_URL = 'https://products-server.onrender.com';
 
 async function sendHttpRequest(url, method = 'GET', body = {}) {
     if (method.toLocaleLowerCase() !== 'get') {
