@@ -43,6 +43,7 @@ export function loadEditPage(product = null,router) {
         const updatedProduct = product ? product : {};
         inputs.forEach(input => updatedProduct[input.name] = input.value);
         updatedProduct.category = categorySelect.value;
+        updatedProduct.quantity = Number(updatedProduct.quantity);
         product ? updateProduct(updatedProduct) : addProduct(updatedProduct);
         alert('Changes saved !')
         router.productsPage();

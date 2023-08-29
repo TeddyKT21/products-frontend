@@ -1,7 +1,5 @@
 import { ROUTER } from "./scripts/util/routing.js";
 
-const main = document.getElementById('main');
-
 
 const homeButton = document.getElementsByClassName('goHome')[0];
 const addButton = document.getElementsByClassName('addProduct')[0];
