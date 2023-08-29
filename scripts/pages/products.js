@@ -1,12 +1,11 @@
 import { appendNewElement, createNewElement, appendIconButton } from "../util/elementCreation.js"
 import { categories, removeProduct, updateProduct } from "../util/data.js";
 
-const main = document.getElementById('main');
 
 function appendCard(container, product,router) {
     const card = appendNewElement('div', container, { class: 'card', product });
     card.addEventListener('click', () => {
-        router.detailsPage(main,product);
+        router.detailsPage(product);
     });
     const imageHolder = appendNewElement('div', card, { class: 'imageholder' });
     const image = appendNewElement('img', imageHolder, { class: 'imageCardDisplay', src: product.image });
@@ -45,7 +44,7 @@ function loadCardBottom(card, product,router) {
     });
     appendIconButton(naviationOptions, 'edit', {}, (e) => {
         e.stopPropagation();
-        router.editPage(main,product);
+        router.editPage(product);
     });
     const star = appendNewElement('i', bottomDiv, { innerText: 'star', class: 'material-symbols-outlined' })
     star.classList.add(product.rating?.rate > 4.5 ? 'fullStar' : 'emptyStar')
@@ -132,6 +131,6 @@ export function loadProductsPage(products) {
     const productsPage = createNewElement('div', { class: 'productsPage' });
     loadSearchBar(productsPage);
     const header = appendNewElement('h1', productsPage, { fonstSize: 'xx-large', innerText: 'Products' });
-    loadCards(products, productsPage);
+    loadCards(products, productsPage,router);
     return productsPage;
 }

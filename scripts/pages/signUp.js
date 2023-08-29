@@ -1,6 +1,5 @@
 import { signUp } from "../util/data.js";
 import { appendInputs, appendNewElement, createNewElement } from "../util/elementCreation.js";
-const main = document.getElementById('main');
 
 export function loadSignUp(router) {
     const signUpPage = createNewElement('div', { class: 'userPage' });
@@ -15,7 +14,7 @@ export function loadSignUp(router) {
         const data = {};
         inputs.forEach(input => data[input.name] = input.type !== 'checkbox' ? input.value : input.checked);
         signUp(data);
-        router.productsPage(main);
+        router.productsPage();
     });
     return signUpPage;
 }

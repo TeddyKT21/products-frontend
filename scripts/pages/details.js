@@ -1,8 +1,6 @@
 import { appendNewElement, createNewElement, appendIconButton } from "../util/elementCreation.js"
 
 
-const main = document.getElementById('main');
-
 
 function appendDetails(detailsPage, product) {
     const detailsDisplay = appendNewElement('div', detailsPage, { class: 'detailsDisplay' });
@@ -19,9 +17,9 @@ function appendDetails(detailsPage, product) {
 
 function appendNavDetails(detailsPage, product,router) {
     const navigateOptions = appendNewElement('div', detailsPage, { class: 'navigateOptions' });
-    appendIconButton(navigateOptions, 'arrow_back', {}, () => router.goBack(main));
-    appendIconButton(navigateOptions, 'edit', {}, () => router.editPage(main,product));
-    appendIconButton(navigateOptions, 'home', {}, () => router.goHome(main));
+    appendIconButton(navigateOptions, 'arrow_back', {}, () => router.goBack());
+    appendIconButton(navigateOptions, 'edit', {}, () => router.editPage(product));
+    appendIconButton(navigateOptions, 'home', {}, () => router.goHome());
 }
 
 export function loadDetailsPage(product = {},router) {

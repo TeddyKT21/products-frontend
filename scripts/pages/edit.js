@@ -1,7 +1,6 @@
 import { appendNewElement, createNewElement, appendIconButton, appendInputs } from "../util/elementCreation.js"
 import { addProduct, categories, updateProduct } from "../util/data.js";
 
-const main = document.getElementById('main');
 function fillInputs(product, inputs, categorySelect) {
     if (product) {
         inputs.forEach(input => input.value = product[input.name]);
@@ -15,9 +14,9 @@ function fillInputs(product, inputs, categorySelect) {
 
 function appendNavEdit(editPage, product,router) {
     const navigateOptions = appendNewElement('div', editPage, { class: 'navigateOptions' });
-    appendIconButton(navigateOptions, 'arrow_back', {}, () => router.goBack(main));
-    if (product) appendIconButton(navigateOptions, 'pageview', {}, () => router.detailsPage(main,product));
-    appendIconButton(navigateOptions, 'home', {}, () => router.goHome(main));
+    appendIconButton(navigateOptions, 'arrow_back', {}, () => router.goBack());
+    if (product) appendIconButton(navigateOptions, 'pageview', {}, () => router.detailsPage(product));
+    appendIconButton(navigateOptions, 'home', {}, () => router.goHome());
 }
 
 export function loadEditPage(product = null,router) {
@@ -46,7 +45,7 @@ export function loadEditPage(product = null,router) {
         updatedProduct.category = categorySelect.value;
         product ? updateProduct(updatedProduct) : addProduct(updatedProduct);
         alert('Changes saved !')
-        router.productsPage(main);
+        router.productsPage();
     })
     return editPage;
 

@@ -6,6 +6,7 @@ import { loadSignUp } from "../pages/signUp.js";
 import { getData } from "./data.js";
 
 const history = [];
+const main = document.getElementById('main');
 
 function goToPage(main, page) {
     if (history.length) main.innerHTML = '';
@@ -25,11 +26,11 @@ function goHome(main) {
 }
 
 export const ROUTER = {
-    editPage: (main, product) => goToPage(main, loadEditPage(product, ROUTER)),
-    productsPage: async (main) => goToPage(main, loadProductsPage(await getData(), ROUTER)),
-    detailsPage: (main, product) => goToPage(main, loadDetailsPage(product, ROUTER)),
-    login: (main) => goToPage(main,loadLogin(ROUTER)),
-    signUp: (main) => goToPage(main,loadSignUp(ROUTER)),
-    goBack: (main) => goBack(main),
-    goHome: (main) => goHome(main)
+    editPage: (product) => goToPage(main, loadEditPage(product, ROUTER)),
+    productsPage: async () => goToPage(main, loadProductsPage(await getData(), ROUTER)),
+    detailsPage: (product) => goToPage(main, loadDetailsPage(product, ROUTER)),
+    login: () => goToPage(main,loadLogin(ROUTER)),
+    signUp: () => goToPage(main,loadSignUp(ROUTER)),
+    goBack: () => goBack(main),
+    goHome: () => goHome(main)
 }

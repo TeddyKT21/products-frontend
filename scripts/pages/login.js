@@ -1,9 +1,6 @@
 import { login } from "../util/data.js";
 import { appendInputs, appendNewElement, createNewElement } from "../util/elementCreation.js";
 
-const main = document.getElementById('main');
-
-
 export function loadLogin(router) {
     const loginPage = createNewElement('div', { class: 'userPage' });
     const header = appendNewElement('h1', loginPage, { innerText: 'Login' });
@@ -17,7 +14,7 @@ export function loadLogin(router) {
         const data = {};
         inputs.forEach(input => data[input.name] = input.value);
         await login(data);
-        router.productsPage(main);
+        router.productsPage();
     });
 
     return loginPage;
