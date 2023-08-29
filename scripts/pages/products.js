@@ -127,7 +127,7 @@ function loadSearchBar(anchor) {
     loadSearchInput(searchBar, filters);
 }
 
-export function loadProductsPage(products) {
+export function loadProductsPage(products,router) {
     const productsPage = createNewElement('div', { class: 'productsPage' });
     loadSearchBar(productsPage);
     const header = appendNewElement('h1', productsPage, { fonstSize: 'xx-large', innerText: 'Products' });
